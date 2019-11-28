@@ -1,0 +1,30 @@
+#include <string>
+#include <iostream>
+using namespace std;
+ 
+
+              int main()
+              {string S;
+              cin>>S;
+              string set = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+/";
+
+              
+              int size=S.size();
+              
+              while(S.size()%24!=0){
+                  S.push_back('0');}
+             //cout<<S<<"\n";
+              string K="";
+
+              int i=0, j=0;
+              while(i<size)
+              {
+               j=(int(S[i])-48)*32+(int(S[i+1])-48)*16+(int(S[i+2])-48)*8+(int(S[i+3])-48)*4+(int(S[i+4])-48)*2+(int(S[i+5])-48);
+               //cout<<j<<" ";
+               i=i+6;
+               K.push_back(set[j]);
+              }
+              
+
+              std::cout<<K;
+              }
